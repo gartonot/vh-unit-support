@@ -1,0 +1,35 @@
+{
+  "name": "vh-unit-support",
+  "version": "1.0.0",
+  "description": "Polyfill for support svh, dvh, lvh for CSS units",
+  "main": "dist/vh-unit-support.min.js",
+  "scripts": {
+    "build": "terser src/index.js -m -c -o dist/vh-unit-support.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gartonot/vh-unit-support.git"
+  },
+  "keywords": [
+    "vh",
+    "dvh",
+    "svh",
+    "lvh",
+    "support",
+    "viewport",
+    "units",
+    "polyfill",
+    "mobile",
+    "100dvh",
+    "dvh"
+  ],
+  "author": "Vladimir Tkachev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gartonot/vh-unit-support/issues"
+  },
+  "homepage": "https://github.com/gartonot/vh-unit-support#readme",
+  "devDependencies": {
+    "terser": "^5.36.0"
+  }
+}

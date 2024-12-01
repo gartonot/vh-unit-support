@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polyfill DVH SVH LVH</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }   
+        body {
+            margin: 0;
+        }
+        html, body {
+            height: 2500px;
+            font-family: sans-serif;
+        }
+        .wrapper {
+            display: flex;
+            gap: 10px;
+        }
+        .column-block {
+            width: 100%;
+            border-radius: 5px;
+            font-weight: 700;
+            min-width: 60px;
+            font-size: 14px;
+            line-height: 1.3;
+            padding: 10px;
+            color: white;
+        }
+        .default-vh {
+            height: 100vh;
+            background-color: #e98223;
+        }
+        .small-vh {
+            height: calc(var(--1svh, 1vh) * 100);
+            height: 100svh;
+            background-color: #70bb43;
+        }
+        .dynamic-vh {
+            height: calc(var(--1dvh, 1vh) * 100);
+            height: 100dvh;
+            background-color: #00aaa9;
+        }
+        .large-vh {
+            height: calc(var(--1lvh, 1vh) * 100);
+            height: 100lvh;
+            background-color: #223b89;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="column-block default-vh">Default: 100vh</div>
+        <div class="column-block small-vh">
+            <p>Small viewport: 100svh</p>
+        </div>
+        <div class="column-block dynamic-vh">
+            <p>Dynamic viewport: 100dvh</p>
+        </div>
+        <div class="column-block large-vh">
+            <p>Large viewport: 100lvh</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import initVHPolyfill from './src/index.js';
+        initVHPolyfill(['svh', 'dvh', 'lvh']);
+    </script>
+</body>
+</html>
