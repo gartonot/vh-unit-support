@@ -27,8 +27,6 @@ function setCustomProperty(units, isDefault = false) {
 function setVh(units = [], isDefault = false) {
     // Default units
     const validUnits = ['dvh', 'svh', 'lvh'];
-
-    console.log(!Array.isArray(units));
     
     if (!Array.isArray(units)) {
         // Copy default values
